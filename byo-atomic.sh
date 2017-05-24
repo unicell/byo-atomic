@@ -6,11 +6,11 @@ working_dir="$HOME/working"
 
 # what's your base distro and version
 
-base_distro="fedora"
-distro_version="f25"
+#base_distro="fedora"
+#distro_version="f25"
 
-#base_distro="centos"
-#distro_version="downstream"
+base_distro="centos"
+distro_version="downstream"
 
 setup() {
 if [ $base_distro = "centos" ]; then
@@ -128,7 +128,7 @@ fi
 
 tree() {
 echo "composing tree"
-sudo rpm-ostree compose tree --repo=/srv/repo --proxy=http://127.0.0.1:8123 ${working_dir}/metadata/*-host.json
+sudo rpm-ostree compose tree --repo=/srv/repo ${working_dir}/metadata/*-host.json
 }
 
 installer() {

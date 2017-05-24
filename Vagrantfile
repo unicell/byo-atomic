@@ -2,12 +2,9 @@ Vagrant.configure(2) do |config|
 
   config.vm.box = "fedora/24-cloud-base"
 
-  config.vm.provider "libvirt" do |libvirt, override|
-    libvirt.cpus = 2
-    libvirt.memory = 4096
-    libvirt.driver = 'kvm'
-    libvirt.nested = true
-    libvirt.storage :file, :size => '20G'
+  config.vm.provider "virtualbox" do |vb, override|
+    vb.cpus = 8
+    vb.memory = 8192
   end
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
